@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="resources/css/variables.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -28,22 +29,29 @@
     <header class="hero header" id="hero-background">
         <div class="gradient-overlay"></div>
         <div class="column hero-container">
-            <h1 id="hero-text">Quality <strong>Design Driven, Performance Focused App & Web</strong> Development</h1>
-            <p id="hero-introduction">Hi, I'm Jake and I'm a Year 2 Computer Science & Cybersecurity student based in
-                the UK.</p>
-        </div>
+
+            <h1 id="hero-text">
+                <span class="fade-in-1">Quality</span>
+                <span class="fade-in-2"><strong>Design Driven</strong></span>
+                <span class="fade-in-3"><strong>Performance Focused</strong></span>
+                <span class="fade-in-4"><strong>App & Web</strong></span>
+                <span class="fade-in-5">Development</span>
+            </h1>
+            <p class="fade-in-6" id="hero-introduction">Hi, I'm Jake and I'm a Year 2 Computer Science & Cybersecurity
+                student based in the UK.</p>
+
     </header>
 
     <main class="main">
         <section class="technologies">
             <div>
-                <h2>Skills & Technologies</h2>
-                <p>Equipped with a versatile tech stack, I design and build impactful solutions. Below are some of my
-                    key technologies.</p>
+                <h2 class="slide-in-left">Skills & Technologies</h2>
+                <p class="slide-in-left">Equipped with a versatile tech stack, I design and build impactful solutions.
+                    Below are some of my key technologies.</p>
             </div>
         </section>
 
-        <section class="technology-boxes">
+        <section class="technology-boxes slide-in-bottom">
 
             <div class="technology-container" id="javascript">
                 <div class="technology-icon">
@@ -151,7 +159,7 @@
             </div>
         </section>
 
-        <section class="project-boxes">
+        <section class="project-boxes slide-in-bottom">
             <div class="project-container">
                 <div class="project-image">
                     <img src="resources/images/mockups/mockuuups-iphone-16-mockup-laying-on-concrete-blocks.jpeg"
@@ -165,6 +173,9 @@
                         <div class="project-technology">Figma</div>
                         <div class="project-technology">Firebase</div>
                     </div>
+                </div>
+                <div class="project-button-container">
+                    <button class="project-button">View Project</button>
                 </div>
             </div>
 
@@ -184,54 +195,72 @@
                         <div class="project-technology">Flutter</div>
                     </div>
                 </div>
+
+                <div class="project-button-container">
+                    <button class="project-button">View Project</button>
+                </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h3>Navigate</h3>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+        <div class="footer-content">
+            <div class="footer-container">
+
+                <!-- <div class="footer-column">
+                    <h2>Like what you see? then get in touch!</h2>
+                </div> -->
+
+                <div class="footer-column">
+                    <h3>Navigate</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li><a href="#project1">Habit Quest</a></li>
+                        <li><a href="#project2">When Is It?</a></li>
+                        <li><a href="#project3">Strong Clone</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Socials</h3>
+                    <ul>
+                        <li><a href="#linkedin">LinkedIn</a></li>
+                        <li><a href="#github">GitHub</a></li>
+                        <li><a href="#twitter">Instagram</a></li>
+                    </ul>
+                </div>
+
+
+
             </div>
-            <div class="footer-column">
-                <h3>Projects</h3>
-                <ul>
-                    <li><a href="#project1">Habit Quest</a></li>
-                    <li><a href="#project2">When Is It?</a></li>
-                    <li><a href="#project3">Strong Clone - Coming Soon</a></li>
-                </ul>
+
+            <div class="footer-bottom">
+                <div class="bottom-container">
+                    <h2>Jake Franklin</h2>
+                    <p>&copy; 2025 | All Rights Reserved</p>
+                </div>
+
             </div>
-            <div class="footer-column">
-                <h3>Socials</h3>
-                <ul>
-                    <li><a href="#twitter">Twitter</a></li>
-                    <li><a href="#linkedin">LinkedIn</a></li>
-                    <li><a href="#github">GitHub</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Jake Franklin</p>
-            <p>&copy; 2025</p>
-        </div>
-        <div class="footer-socials">
-            <a href="#twitter"><img src="path/to/twitter-icon.png" alt="Twitter"></a>
-            <a href="#linkedin"><img src="path/to/linkedin-icon.png" alt="LinkedIn"></a>
-            <a href="#github"><img src="path/to/github-icon.png" alt="GitHub"></a>
-        </div>
+
+            <div id="divider"></div>
+
+            <div class="footer-socials">
+                <div class="footer-socials-container">
+                    <a href="#linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                    <a href="#github"><i class="fa fa-github" aria-hidden="true"></i></a>
+                    <a href="#instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                </div>
     </footer>
 
-
-    <!-- <footer class="footer">
-        <p>&copy; 2023 My Website</p>
-    </footer> -->
-
-    <!-- <script src="resources/js/vendor/three.min.js"></script>
+    <script src="resources/js/main.js"></script>
+    <script src="resources/js/vendor/three.min.js"></script>
     <script src="resources/js/vendor/vanta.net.min.js"></script>
     <script>
         VANTA.NET({
@@ -243,7 +272,7 @@
             spacing: 14,
             showDots: true
         });
-    </script> -->
+    </script>
 
 
 </body>
