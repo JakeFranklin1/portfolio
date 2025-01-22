@@ -1,0 +1,102 @@
+body {
+    font-family: var(--font--family);
+    background: black;
+}
+
+.nav-bar {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-column: span 12;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    height: 5rem;
+}
+
+#logo {
+    grid-column: 3 / span 1;
+    font-weight: 100;
+    font-size: 1rem;
+    cursor: default;
+}
+
+
+.nav-links-container {
+    grid-column: 7 / span 4; /* Moved from 8 to 7 to reduce space */
+    display: flex;
+    justify-content: flex-end; /* Align links to the right */
+    gap: 2.5rem;
+}
+
+/* Base navigation link styles */
+.nav-links {
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;  /* Required for absolute positioning of underline */
+    transition: all 0.3s ease;
+}
+
+/* Animated underline element */
+.nav-links::after {
+    content: '';
+    position: absolute;  /* Position relative to nav link */
+    width: 0;           /* Start with 0 width */
+    height: 2px;        /* Thickness of underline */
+    bottom: -4px;       /* Space between text and underline */
+    left: 0;           /* Align to left edge */
+    background-color: var(--accent-color);
+    transition: width 0.3s ease;  /* Smooth width animation */
+}
+
+/* Expand underline on hover */
+.nav-links:hover::after {
+    width: 100%;  /* Expand to full width */
+}
+
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Subtract the navbar height */
+    text-align: center;
+    background-color: black;
+    margin-top: -5rem; /* Offset the navbar height */
+}
+
+.hero .column {
+    width: 100%;
+    grid-column: 2 / span 10;
+    margin: 0 auto;
+    color: white;
+}
+
+.hero #hero-location,
+.hero #hero-introduction {
+    color: rgb(133, 133, 133);
+    font-weight: 100;
+    font-size: 1.75rem;
+    margin-bottom: 0;
+}
+
+.hero #hero-introduction-about {
+    color: rgb(133, 133, 133);
+    font-weight: 100;
+    font-size: 1rem;
+    margin-bottom: 0;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 4vw, 5rem);
+    width: 80%;
+    font-weight: var(--font--weight);
+    line-height: 1.2;
+    margin: 0 auto;
+}
+
+.hero p {
+    font-size: var(--font--size-large);
+    font-weight: var(--font--weight);
+}
+
+strong {
+    color: var(--accent-color);
+}

@@ -1,0 +1,38 @@
+:root {
+    --grid-column-count: 12;
+    --grid-gap: 10px;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(var(--grid-column-count), 1fr);
+    gap: var(--grid-gap);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.header, .main, .footer {
+    grid-column: span 12;
+}
+
+.grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 9999;
+    pointer-events: none;
+    /* background-image: repeating-linear-gradient(
+        to right,
+        rgba(255, 0, 0, 0.05),
+        rgba(255, 0, 0, 0.05) calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)),
+        transparent calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)),
+        transparent calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count) + var(--grid-gap))
+    ); */
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 0 var(--grid-gap);
+}

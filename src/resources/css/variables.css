@@ -1,0 +1,47 @@
+/* Font Face Declarations
+----------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Satoshi';
+    src: url('../fonts/Satoshi-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Variables
+----------------------------------------------------------------------------- */
+:root {
+    --font--family: "Satoshi", system-ui, sans-serif;
+    --font--style: normal;
+    --font--weight: 500;
+    --font--margin-left: -0.07em;
+    --font--margin-left-opening-quote-mark: -0.406em;
+    --font--feature-settings: "liga", "ss02", "ss03", "ss04", "ss06";
+    --font--feature-settings-no-stylized-numeral-8: "ss06" 0;
+    --font--size-huge: clamp(36px, 5.14vw, 5.14vw);
+    --font--size-large: clamp(26px, 1.81vw, 1.81vw);
+    --font--size-medium: 26px;
+    --font--size-regular: 16px;
+    --font--size-regular-line-height: 1.25;
+    --accent-color: #00FFC0;
+}
