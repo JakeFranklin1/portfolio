@@ -174,13 +174,16 @@ a:hover::after {
     margin: 0 auto;
     color: var(--text-color);
 }
-
 .hero #hero-introduction {
     font-family: 'Poppins', sans-serif;
     font-weight: 500;
     font-size: 1.15rem;
-    margin-bottom: 0;
+    margin: 0 auto; /* Reset and center */
+    width: 50%; /* Control width */
+    padding: 1rem;
+    box-sizing: border-box; /* Include padding in width calculation */
 }
+
 
 .hero h1 {
     font-size: clamp(2.5rem, 4vw, 5rem);
@@ -228,24 +231,6 @@ strong {
     display: grid;
     grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
     gap: 16px;
-}
-
-@media (max-width: 1024px) {
-    .technology-boxes {
-        grid-template-columns: repeat(3, 1fr); /* Adjust to 3 columns for tablet width */
-    }
-}
-
-@media (max-width: 768px) {
-    .technology-boxes {
-        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
-    }
-}
-
-@media (max-width: 480px) {
-    .technology-boxes {
-        grid-template-columns: 1fr; /* Adjust to 1 column for mobile screens */
-    }
 }
 
 .technology-container {
@@ -364,12 +349,6 @@ strong {
     grid-template-columns: repeat(2, 1fr); /* Two columns side by side */
     gap: 16px; /* Gap between the columns */
     margin-top: 2rem; /* Add margin to the top for spacing */
-}
-
-@media (max-width: 768px) {
-    .project-boxes {
-        grid-template-columns: 1fr; /* Single column for smaller screens */
-    }
 }
 
 .project-container {
@@ -682,8 +661,10 @@ ul {
     }
 
     .hero #hero-introduction {
-        font-size: 0.9rem;
-        padding: 0.5rem;
+        width: 90%;
+        margin: 0 auto;
+        padding: 1rem;
+        box-sizing: border-box;
     }
 
     .main {
@@ -708,8 +689,11 @@ ul {
     }
 
     .hero #hero-introduction {
+        width: 100%;
         font-size: 0.9rem;
+        margin: 0 auto;
         padding: 1rem;
+        box-sizing: border-box;
     }
 
     .nav-links {
@@ -739,10 +723,13 @@ ul {
     }
 
     .hero #hero-introduction {
-        font-size: 1rem;
-        padding: 1rem;
+        width: 100%;
+        font-size: 0.9rem;
         margin: 0 auto;
+        padding: 1rem;
+        box-sizing: border-box;
     }
+
 
     .nav-links {
         font-size: 1rem;

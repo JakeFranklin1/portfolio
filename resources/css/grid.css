@@ -5,7 +5,7 @@
 
 html {
     scroll-behavior: smooth;
-    max-width: 1920px; /* Set the maximum width */
+    max-width: 2560px;
     margin: 0 auto; /* Center the content */
 }
 
