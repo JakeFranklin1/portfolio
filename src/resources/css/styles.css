@@ -1,15 +1,50 @@
 body {
-    font-family: var(--font--family);
-    background: black;
+    font-family: var(--font--family); /* Use custom font */
+    position: relative; /* Ensure body is positioned correctly */
+    z-index: 1; /* Ensure body content is above the background */
+    background-color: black;
 }
 
+p {
+    color: var(--secondary-text-color);
+    font-weight: 100;
+}
+
+#hero-background {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    padding-bottom: 2em;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 1) 100%
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+nav {
+    background-color: rgba(0, 0, 0, 0); /* Add a semi-transparent background color */
+}
 .nav-bar {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column: span 12;
     align-items: center;
-    color: rgb(255, 255, 255);
-    height: 5rem;
+    color: var(--text-color);
+    height: 80px; /* Set a fixed height for the navbar */
+    z-index: 1000; /* Set a high z-index to ensure it is on top */
+    position: relative; /* Ensure it is positioned above the VANTA.NET background */
 }
 
 #logo {
@@ -58,45 +93,114 @@ body {
     align-items: center;
     height: 100vh; /* Subtract the navbar height */
     text-align: center;
-    background-color: black;
-    margin-top: -5rem; /* Offset the navbar height */
+    margin-top: -5.5rem; /* Offset the navbar height */
 }
 
 .hero .column {
     width: 100%;
     grid-column: 2 / span 10;
     margin: 0 auto;
-    color: white;
+    color: var(--text-color);
 }
 
-.hero #hero-location,
 .hero #hero-introduction {
-    color: rgb(133, 133, 133);
+    font-family: 'Poppins', sans-serif;
+    color: rgb(207, 207, 207);
     font-weight: 100;
-    font-size: 1.75rem;
-    margin-bottom: 0;
-}
-
-.hero #hero-introduction-about {
-    color: rgb(133, 133, 133);
-    font-weight: 100;
-    font-size: 1rem;
+    font-size: 1.25rem;
     margin-bottom: 0;
 }
 
 .hero h1 {
     font-size: clamp(2.5rem, 4vw, 5rem);
-    width: 80%;
+    width: 70%;
     font-weight: var(--font--weight);
     line-height: 1.2;
     margin: 0 auto;
 }
 
-.hero p {
-    font-size: var(--font--size-large);
-    font-weight: var(--font--weight);
-}
-
 strong {
     color: var(--accent-color);
+}
+
+.technologies h2,
+.technologies p {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.main h2 {
+    color: var(--text-color);
+    font-size: 3rem;
+    font-weight: 400;
+    margin-left: -0.07em; /* Adjust margin for font */
+}
+
+.main {
+    margin-top: 5em;
+    grid-column: 2 / span 12;
+    color: var(--text-color); /* Ensure text color is visible */
+}
+
+.main p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 100;
+}
+
+.technology-boxes {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.technology-container {
+    display: flex;
+    align-items: center;
+    width: 20%;
+    height: 50px;
+    padding: 16px;
+    background-color: #1a1a1a; /* Adjust as needed */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.technology-icon {
+    flex-shrink: 0;
+    width: 4rem; /* Adjust as needed */
+    height: 4rem; /* Adjust as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fddf4739;
+    border-radius: 8px;
+    margin-right: 16px;
+}
+
+.technology-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.technology-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.technology-name {
+    font-family: 'Raleway', 'Raleway Fallback', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.technology-description {
+    font-family: 'Raleway', 'Raleway Fallback', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 4px 0 0;
 }

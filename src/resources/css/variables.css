@@ -39,9 +39,11 @@
     --font--feature-settings: "liga", "ss02", "ss03", "ss04", "ss06";
     --font--feature-settings-no-stylized-numeral-8: "ss06" 0;
     --font--size-huge: clamp(36px, 5.14vw, 5.14vw);
-    --font--size-large: clamp(26px, 1.81vw, 1.81vw);
+    --font--size-large: clamp(26px, 3.81vw, 3.81vw);
     --font--size-medium: 26px;
     --font--size-regular: 16px;
     --font--size-regular-line-height: 1.25;
     --accent-color: #00FFC0;
+    --text-color: #F7F7F7;
+    --secondary-text-color: #CFCFCF;
 }

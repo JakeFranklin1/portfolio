@@ -13,8 +13,9 @@ body {
     position: relative;
 }
 
-.header, .main, .footer {
-    grid-column: span 12;
+.header, .footer {
+    grid-column: 1 / span 12;
+    width: 100%;
 }
 
 .grid-overlay {
@@ -27,8 +28,8 @@ body {
     pointer-events: none;
     /* background-image: repeating-linear-gradient(
         to right,
-        rgba(255, 0, 0, 0.05),
-        rgba(255, 0, 0, 0.05) calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)),
+        rgba(255, 0, 0, 0.244),
+        rgba(255, 0, 0, 0.244) calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)),
         transparent calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count)),
         transparent calc((100% - (var(--grid-column-count) - 1) * var(--grid-gap)) / var(--grid-column-count) + var(--grid-gap))
     ); */
