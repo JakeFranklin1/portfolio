@@ -638,6 +638,10 @@ ul {
         grid-template-columns: 1fr;
     }
 
+    .project-boxes {
+        grid-template-columns: 1fr;
+    }
+
     .project-technology {
         font-size: 0.8rem;
         padding: 0.5rem 0.75rem;
