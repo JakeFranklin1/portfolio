@@ -31,6 +31,8 @@
 /* Variables
 ----------------------------------------------------------------------------- */
 :root {
+
+    /* Fonts */
     --font--family: "Satoshi", system-ui, sans-serif;
     --font--style: normal;
     --font--weight: 500;
@@ -43,7 +45,27 @@
     --font--size-medium: 26px;
     --font--size-regular: 16px;
     --font--size-regular-line-height: 1.25;
+
+    /* Colours */
     --accent-color: #00FFC0;
     --text-color: #F7F7F7;
-    --secondary-text-color: #CFCFCF;
+    --secondary-text-color: #818181;
+
+    /* Technology Background Colors */
+    --javascript-bg: rgba(247, 223, 30, 0.30);    /* Yellow */
+    --figma-bg: rgba(242, 78, 30, 0.30);         /* Red/Orange */
+    --firebase-bg: rgba(255, 202, 40, 0.30);     /* Yellow/Orange */
+    --python-bg: linear-gradient(
+        to bottom right,
+        rgba(0, 140, 255, 0.30),  /* Python blue */
+        rgba(255, 213, 0, 0.30)   /* Python yellow */
+    );
+    --git-bg: rgba(240, 80, 50, 0.30);           /* Red */
+    --swift-bg: rgba(0, 221, 255, 0.30);         /* Light Blue */
+    --kotlin-bg: rgba(122, 255, 144, 0.30);      /* Light Green */
+    --java-bg: linear-gradient(
+        to bottom right,
+        rgba(255, 140, 0, 0.30),  /* Java orange */
+        rgba(255, 0, 217, 0.30)    /* Java dark orange/red */
+    );
 }

@@ -1,13 +1,39 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: var(--font--family); /* Use custom font */
     position: relative; /* Ensure body is positioned correctly */
     z-index: 1; /* Ensure body content is above the background */
     background-color: black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-y: scroll;
+    transition: all 0.3s ease;
+}
+
+.nav-links,
+.technology-container,
+.button,
+.project-technology,
+a {
+    transition: all 0.3s ease;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 p {
     color: var(--secondary-text-color);
-    font-weight: 100;
 }
 
 #hero-background {
@@ -49,7 +75,7 @@ nav {
 
 #logo {
     grid-column: 3 / span 1;
-    font-weight: 100;
+    font-weight: 200;
     font-size: 1rem;
     cursor: default;
 }
@@ -105,16 +131,15 @@ nav {
 
 .hero #hero-introduction {
     font-family: 'Poppins', sans-serif;
-    color: rgb(207, 207, 207);
-    font-weight: 100;
-    font-size: 1.25rem;
+    font-weight: 500;
+    font-size: 1.15rem;
     margin-bottom: 0;
 }
 
 .hero h1 {
     font-size: clamp(2.5rem, 4vw, 5rem);
-    width: 70%;
-    font-weight: var(--font--weight);
+    max-width: 72%;
+    font-weight: 600;
     line-height: 1.2;
     margin: 0 auto;
 }
@@ -124,8 +149,9 @@ strong {
 }
 
 .technologies h2,
-.technologies p {
+.technologies p{
     text-align: left;
+    line-height: 1.5;
     padding: 0;
     margin: 0;
 }
@@ -133,62 +159,94 @@ strong {
 .main h2 {
     color: var(--text-color);
     font-size: 3rem;
-    font-weight: 400;
+    font-weight: 500;
     margin-left: -0.07em; /* Adjust margin for font */
 }
 
 .main {
-    margin-top: 5em;
-    grid-column: 2 / span 12;
-    color: var(--text-color); /* Ensure text color is visible */
+    max-width: 1440px;
+    margin: 0 auto;
+    grid-column: 1 / span 12;
+    color: var(--text-color);
 }
 
 .main p {
     font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 100;
+    color: var(--secondary-text-color);
+    font-weight: 500;
 }
 
 .technology-boxes {
     margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Default to 4 columns */
     gap: 16px;
+}
+
+@media (max-width: 1024px) {
+    .technology-boxes {
+        grid-template-columns: repeat(3, 1fr); /* Adjust to 3 columns for tablet width */
+    }
+}
+
+@media (max-width: 768px) {
+    .technology-boxes {
+        grid-template-columns: repeat(2, 1fr); /* Adjust to 2 columns for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .technology-boxes {
+        grid-template-columns: 1fr; /* Adjust to 1 column for mobile screens */
+    }
 }
 
 .technology-container {
     display: flex;
     align-items: center;
-    width: 20%;
     height: 50px;
     padding: 16px;
     background-color: #1a1a1a; /* Adjust as needed */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: default;
+}
+
+.technology-container:hover {
+    background-color: #242424; /* Adjust hover background color */
 }
 
 .technology-icon {
     flex-shrink: 0;
-    width: 4rem; /* Adjust as needed */
-    height: 4rem; /* Adjust as needed */
+    width: 3.5rem;
+    height: 3.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #fddf4739;
-    border-radius: 8px;
-    margin-right: 16px;
 }
 
 .technology-icon img {
+    width: 2rem; /* Reduce size of icon within container */
+    height: 2rem;
+    object-fit: contain;
+    display: block; /* Ensure proper display */
+}
+
+.technology-icon-background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.1); /* Default background for icons */
+    border-radius: 8px;
 }
 
 .technology-details {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-left: 1rem;
 }
 
 .technology-name {
@@ -200,7 +258,147 @@ strong {
 
 .technology-description {
     font-family: 'Raleway', 'Raleway Fallback', sans-serif;
-    font-size: 1rem;
+    font-size: 0.8rem;
     font-weight: 500;
     margin: 4px 0 0;
+}
+
+#javascript .technology-icon-background {
+    background-color: var(--javascript-bg);
+}
+
+#figma .technology-icon-background {
+    background-color: var(--figma-bg);
+}
+
+#firebase .technology-icon-background {
+    background-color: var(--firebase-bg);
+}
+
+#python .technology-icon-background {
+    background: var(--python-bg);
+}
+
+#git .technology-icon-background {
+    background-color: var(--git-bg);
+}
+
+#swift .technology-icon-background {
+    background-color: var(--swift-bg);
+}
+
+#kotlin .technology-icon-background {
+    background-color: var(--kotlin-bg);
+}
+
+#java .technology-icon-background {
+    background: var(--java-bg);
+}
+
+.projects h2,
+.projects p {
+    text-align: left;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+.projects h2 {
+    margin-top: 2.5em;
+}
+
+.projects p {
+    margin-bottom: 2.5em;
+}
+.project-boxes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns side by side */
+    gap: 16px; /* Gap between the columns */
+    margin-top: 2rem; /* Add margin to the top for spacing */
+}
+
+@media (max-width: 768px) {
+    .project-boxes {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+    }
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensure content doesn't overflow the rounded edges */
+    padding: 16px; /* Add padding inside the container */
+    height: auto; /* Allow the container to adjust its height */
+}
+
+.project-image {
+    width: 100%;
+    position: relative;
+    padding-bottom: calc(426 / 528 * 100%); /* Maintain the aspect ratio of 528x426 */
+}
+
+.project-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire container */
+    border-radius: 8px; /* Ensure the image has rounded edges */
+}
+
+.project-details {
+    flex-grow: 1; /* Ensure the text takes up the remaining space */
+    margin-top: 16px; /* Add space between the image and the text */
+}
+
+.project-image-overlay {
+    position: absolute;
+    padding-left: 1rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.project-image-overlay p {
+    font-family: 'Raleway', 'Raleway Fallback', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.project-technologies {
+    display: flex;
+    flex-direction: row; /* Ensure elements are displayed horizontally */
+    gap: 0.5rem; /* Space between elements */
+    margin-top: 0.5rem;
+    align-items: center; /* Align items vertically in the center */
+}
+
+.project-technology {
+    cursor: default;
+    font-family: 'Raleway', 'Raleway Fallback', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+    border: solid 1px rgba(255, 255, 255, 0.2); /* Border with transparency */
+    border-radius: 4px; /* Rounded corners */
+}
+
+.project-technology:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Lighten the background on hover */
+}
+
+footer {
+    margin-top: 5em;
+    border-top: solid 2px #313131;
+    color: var(--text-color); 
+    padding: 2rem 0;
 }
