@@ -32,6 +32,12 @@ a:hover {
     color: var(--accent-color);
 }
 
+a[id] {
+    display: block;
+    visibility: hidden;
+    position: relative;
+}
+
 li {
     list-style-type: none;
     padding: 0;
@@ -40,6 +46,47 @@ li {
 
 p {
     color: var(--secondary-text-color);
+}
+
+#scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: var(--accent-color);
+    color: #000000;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+#scroll-to-top:hover {
+    background-color: #02cc74;
+    transform: translateY(-5px);
+}
+
+#scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+#scroll-to-top img {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+#scroll-to-top:hover img {
+    transform: translateY(-2px);
 }
 
 /* Fade-in and slide-in animations */
@@ -125,6 +172,13 @@ nav {
     cursor: default;
 }
 
+.nav-bar.scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(10px);
+    height: 60px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
 .nav-links-container {
     grid-column: 7 / span 4; /* Moved from 8 to 7 to reduce space */
     display: flex;
@@ -166,6 +220,7 @@ a:hover::after {
     height: 100vh; /* Subtract the navbar height */
     text-align: center;
     margin-top: -5.5rem; /* Offset the navbar height */
+    cursor: default;
 }
 
 .hero .column {
@@ -398,6 +453,7 @@ strong {
     bottom: 0;
     pointer-events: none;
     z-index: 2;
+
 }
 
 .project-image-overlay p {
@@ -442,7 +498,7 @@ strong {
     font-weight: 600;
     padding: 0.75rem 1rem;
     background-color: var(--accent-color);
-    color: #5a5a5a;
+    color: #000000;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -450,10 +506,10 @@ strong {
 }
 
 .project-button:hover {
-    background-color: #00e6ac; /* Brighter mint green */
-    color: var(--text-color);
+    background-color: #02cc74; /* Brighter mint green */
+    /* color: var(--text-color); */
     transform: translateY(-5px); /* Subtle lift effect */
-    box-shadow: 0 2px 4px rgba(0, 200, 149, 0.2); /* Mint-tinted shadow */
+    box-shadow: 0 2px 4px rgba(0, 255, 191, 0.2); /* Mint-tinted shadow */
 }
 
 /* Footer section */
@@ -461,7 +517,7 @@ footer {
     background-image: url('../images/topology/topology2.png');
     background-size: cover;
     background-position: center;
-    margin-top: 5em;
+    margin-top: 10em;
     border-top: solid 2px #313131;
     color: var(--text-color);
     padding: 2rem 0;
@@ -683,6 +739,14 @@ ul {
 
     .footer-column {
         grid-column: 1 / -1 !important;
+    }
+
+    #scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.8rem;
     }
 }
 

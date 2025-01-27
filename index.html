@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <title>Jake Franklin Portfolio</title>
+    <meta name="description" content="Jake Franklin - Computer Science & Cybersecurity Portfolio">
+    <link rel="apple-touch-icon" sizes="180x180" href="resources/images/favicons//apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/images/favicons/favicon-16x16.png">
+    <link rel="manifest" href="resources/images/favicons/site.webmanifest">
+
     <link rel="stylesheet" href="resources/css/grid.css">
     <link rel="stylesheet" href="resources/css/styles.css">
     <link rel="stylesheet" href="resources/css/normalize.css">
@@ -17,15 +23,17 @@
 
 <body>
     <div class="grid-overlay"></div>
+    <a id="home"></a>
 
-    <nav class="nav-bar">
+    <nav class="nav-bar" aria-label="Main navigation">
         <div id="logo">JF.</div>
         <div class="nav-links-container">
-            <div class="nav-links">Home</div>
-            <div class="nav-links">Projects</div>
-            <div class="nav-links">Contact</div>
+            <a href="#home" class="nav-links">Home</a>
+            <a href="#skills" class="nav-links">Skills</a>
+            <a href="#projects" class="nav-links">Projects</a>
         </div>
     </nav>
+
 
     <header class="hero header" id="hero-background">
         <div class="gradient-overlay"></div>
@@ -40,10 +48,11 @@
             </h1>
             <p class="fade-in-6" id="hero-introduction">Hi, I'm Jake and I'm a Year 2 Computer Science & Cybersecurity
                 student based in the UK.</p>
-
     </header>
 
     <main class="main">
+        <a id="skills"></a>
+
         <section class="technologies">
             <div>
                 <h2 class="slide-in-left">Skills & Technologies</h2>
@@ -52,7 +61,7 @@
             </div>
         </section>
 
-        <section class="technology-boxes slide-in-bottom">
+        <section class="technology-boxes slide-in-bottom" id="skills">
 
             <div class="technology-container" id="javascript">
                 <div class="technology-icon">
@@ -153,15 +162,17 @@
 
         </section>
 
+        <a id="projects"></a>
         <section class="projects">
             <div>
                 <h2>Projects</h2>
-                <p>Here are some of the projects I have worked on</p>
+                <!-- <p>Here are some of the projects I have worked on</p> -->
             </div>
         </section>
 
-        <section class="project-boxes slide-in-bottom">
-            <div class="project-container">
+        <section class="project-boxes">
+
+            <div class="project-container slide-in-bottom" id="project1">
                 <div class="project-image">
                     <img src="resources/images/mockups/mockuuups-iphone-16-mockup-laying-on-concrete-blocks.jpeg"
                         alt="Project Image">
@@ -180,7 +191,7 @@
                 </div>
             </div>
 
-            <div class="project-container">
+            <div class="project-container slide-in-bottom" id="project2">
                 <div class="project-image">
                     <img src="resources/images/projects/3d-abstract-flowing-geometric-shapes.jpg" alt="Project Image">
                     <p class="project-image-overlay">Images Coming Soon</p>
@@ -216,8 +227,8 @@
                     <h3>Navigate</h3>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
                     </ul>
                 </div>
 
@@ -232,14 +243,14 @@
                 <div class="footer-column">
                     <h3>Socials</h3>
                     <ul>
-                        <li><a href="#linkedin">LinkedIn</a></li>
-                        <li><a href="#github">GitHub</a></li>
-                        <li><a href="#twitter">Instagram</a></li>
+                        <li><a href="https://www.linkedin.com/in/jake-franklin-01a248173/" target="_blank"
+                                rel="noopener noreferrer">LinkedIn</a></li>
+                        <li><a href="https://github.com/JakeFranklin1" target="_blank"
+                                rel="noopener noreferrer">GitHub</a></li>
+                        <li><a href="https://www.instagram.com/jakefranklin_98/" target="_blank"
+                                rel="noopener noreferrer">Instagram</a></li>
                     </ul>
                 </div>
-
-
-
             </div>
 
             <div class="footer-bottom">
@@ -247,20 +258,35 @@
                     <h2>Jake Franklin</h2>
                     <p>&copy; 2025 | All Rights Reserved</p>
                 </div>
-
             </div>
 
             <div id="divider"></div>
 
             <div class="footer-socials">
                 <div class="footer-socials-container">
-                    <a href="#linkedin"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                    <a href="#github"><i class="fa fa-github" aria-hidden="true"></i></a>
-                    <a href="#instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://linkedin.com/in/jake-franklin-01a248173" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn Profile">
+                        <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://github.com/JakeFranklin1" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub Profile">
+                        <i class="fa fa-github" aria-hidden="true"></i>
+                    </a>
+                    <a href="https://instagram.com/jakefranklin_98" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram Profile">
+                        <i class="fa fa-instagram" aria-hidden="true"></i>
+                    </a>
                 </div>
+            </div>
+        </div>
     </footer>
 
+    <button id="scroll-to-top" aria-label="Scroll to top">
+        <img src="resources/images/icons/arrow_up.svg" alt="Scroll to top" width="16" height="16">
+    </button>
+
     <script src="resources/js/main.js"></script>
+    <script src="resources/js/scroll.js"></script>
     <script src="resources/js/vendor/three.min.js"></script>
     <script src="resources/js/vendor/vanta.net.min.js"></script>
     <script>
@@ -274,8 +300,6 @@
             showDots: true
         });
     </script>
-
-
 </body>
 
 </html>
