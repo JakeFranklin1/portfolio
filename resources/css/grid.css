@@ -3,12 +3,6 @@
     --grid-gap: 10px;
 }
 
-html {
-    scroll-behavior: smooth;
-    max-width: 2560px;
-    margin: 0 auto; /* Center the content */
-}
-
 body {
     display: grid;
     grid-template-columns: repeat(var(--grid-column-count), 1fr);

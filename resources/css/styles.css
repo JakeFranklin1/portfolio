@@ -1,6 +1,8 @@
 /* General styles */
 html {
     scroll-behavior: smooth;
+    max-width: 2560px;
+    margin: 0 auto; /* Center the content */
 }
 
 body {
@@ -503,6 +505,7 @@ strong {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .project-button:hover {
@@ -510,6 +513,11 @@ strong {
     /* color: var(--text-color); */
     transform: translateY(-5px); /* Subtle lift effect */
     box-shadow: 0 2px 4px rgba(0, 255, 191, 0.2); /* Mint-tinted shadow */
+    color: #000000;
+}
+
+.project-button::after {
+    display: none; /* Disable underline for project buttons */
 }
 
 /* Footer section */
