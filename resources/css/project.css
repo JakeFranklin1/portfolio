@@ -46,10 +46,13 @@ h2 {
 }
 
 .project-hero {
-    width: 70%;
+    width: 80%;
+    max-width: 1280px;
+    height: auto;
     margin: 0 auto;
-    height: 90vh;
-    overflow: hidden;
+    position: relative;
+    aspect-ratio: 4 / 3;
+    transition: all 0.3s ease;
 }
 
 .project-hero img {
@@ -57,10 +60,12 @@ h2 {
     height: 100%;
     object-fit: cover;
     border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .project-content {
-    width: 70%;
+    width: 80%;
+    max-width: 1280px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -91,7 +96,7 @@ h2 {
 
 .project-description {
     color: var(--text-color);
-    padding-left: 4em;
+    /* padding-left: 4em; */
 }
 
 .project-technology {
@@ -117,22 +122,108 @@ h2 {
     }
 }
 
-@media (max-width: 768px) {
-    .project-content {
-        width: 90%;
-        grid-template-columns: 1fr;
-        gap: 2rem;
+@media (max-width: 1280px) {
+    .project-header h1 .title {
+        font-size: 6rem;
     }
 
-    .project-overview {
-        position: static;
+    h1 .subtitle {
+        font-size: 2.5rem;
     }
 
     .project-hero {
         width: 90%;
     }
 
-    .project-links .project-button {
-        min-width: 120px;
+    .project-content {
+        width: 90%;
+        gap: 3rem;
+    }
+
+    .project-description {
+        padding-left: 2em;
+    }
+
+    .scroll-indicator {
+        margin-bottom: 12em;
+    }
+
+    .project-header {
+        margin-top: 8em;
+    }
+}
+
+@media (max-width: 1024px) {
+    .project-header h1 .title {
+        font-size: 5rem;
+    }
+
+    h1 .subtitle {
+        font-size: 2rem;
+    }
+    .project-description {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-header h1 .title {
+        font-size: 4rem;
+    }
+
+    h1 .subtitle {
+        font-size: 1.5rem;
+    }
+
+    .project-hero {
+        width: 90%;
+    }
+
+    .project-content {
+        width: 90%;
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-description {
+        padding-left: 0;
+    }
+
+    .project-overview {
+        position: static;
+    }
+
+    .scroll-indicator {
+        margin-bottom: 8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-header h1 .title {
+        font-size: 2.5rem;
+    }
+
+    h1 .subtitle {
+        font-size: 1rem;
+    }
+
+    .project-hero {
+        width: 100%;
+    }
+
+    .project-links {
+        flex-direction: column;
+    }
+
+    .project-technologies {
+        gap: 0.5rem;
+    }
+
+    .scroll-indicator {
+        margin-bottom: 5em;
+    }
+
+    .project-header {
+        margin-top: 5em;
     }
 }
