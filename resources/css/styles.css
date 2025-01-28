@@ -50,6 +50,14 @@ p {
     color: var(--secondary-text-color);
 }
 
+h1,
+h2,
+h3,
+p {
+    cursor: default;
+}
+
+
 #scroll-to-top {
     position: fixed;
     bottom: 30px;
@@ -391,6 +399,7 @@ strong {
     line-height: 1.5;
     padding: 0;
     margin: 0 0 0 0;
+    cursor: default;
 }
 
 .projects h2 {
@@ -518,6 +527,11 @@ strong {
 
 .project-button::after {
     display: none; /* Disable underline for project buttons */
+}
+
+.project-button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
 
 /* Footer section */
