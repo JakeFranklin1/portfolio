@@ -196,9 +196,16 @@ nav {
 
 .nav-bar.scrolled {
     background-color: rgba(0, 0, 0, 0.9);
+    -webkit-backdrop-filter: blur(10px); /* Add webkit prefix for Safari support */
     backdrop-filter: blur(10px);
     height: 60px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .nav-links-container {
