@@ -13,14 +13,19 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-y: scroll;
-    opacity: 0; /* Initial state */
+    opacity: 1; /* Initial state */
     visibility: hidden; /* Initial state */
-    transition: opacity 300ms ease, visibility 300ms ease; /* Transition properties */
+    transition: opacity 300ms ease; /* Transition properties */
 }
 
-body.visible {
+body.fade-in {
     opacity: 1;
     visibility: visible;
+}
+
+body.fade-out {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .nav-links,
