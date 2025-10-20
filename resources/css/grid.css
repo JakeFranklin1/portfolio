@@ -15,8 +15,8 @@ body {
     grid-column: 1 / span 12;
     width: 100%;
 }
-
-/* .grid-overlay {
+/* 
+.grid-overlay {
     position: fixed;
     top: 0;
     left: 0;
