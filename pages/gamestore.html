@@ -53,8 +53,12 @@
                     <div class="project-technology">Full Stack</div>
                     <div class="project-technology">Node.js</div>
                     <div class="project-technology">Express</div>
-                    <div class="project-technology">Figma</div>
+                    <div class="project-technology">PostgreSQL</div>
                     <div class="project-technology">Supabase</div>
+                    <div class="project-technology">Railway</div>
+                    <div class="project-technology">IGDB API</div>
+                    <div class="project-technology">REST API</div>
+                    <div class="project-technology">Figma</div>
                     <div class="project-technology">University</div>
                 </div>
                 <div class="project-links">
@@ -67,14 +71,38 @@
                         aria-label="View GameStore Live" class="project-button">Live Demo</a>
                 </div>
             </div>
-
             <div class="project-description">
                 <h2>About the Project</h2>
-                <p>GameStore is a full stack web-app with a simulated marketplace where users can purchase games, leave
-                    reviews and also add their own games via the community section. This was a University group project
-                    where I led the project as the coding and design lead. I designed the website and worked on the back
-                    and front end. The website used the <a href="https://api-docs.igdb.com/" target="_blank"
-                        rel="noopener noreferrer">IGDB API</a> </p>
+                <p>GameStore is a production-grade full-stack web application that replicates the functionality of
+                    modern game marketplaces like Steam or Epic Games Store. As the sole developer responsible for all
+                    front-end and back-end implementation (excluding database schema design), I led this university team
+                    project from initial concept through to live deployment, demonstrating end-to-end ownership of a
+                    complex web application.</p>
+
+                <p>Taking on dual roles as Design Lead and Technical Lead, I architected a scalable three-tier
+                    application infrastructure. The backend Node.js/Express server, deployed on Railway, acts as a
+                    middleware layer handling all API requests to the <a href="https://api-docs.igdb.com/"
+                        target="_blank" rel="noopener noreferrer" class="project-desc-links">IGDB API</a>, providing
+                    real-time game information including metadata, cover art, ratings,
+                    and release dates. Supabase manages both authentication services and PostgreSQL database operations,
+                    ensuring secure user management and data persistence.</p>
+
+                <p>The design process began in Figma, where I created a comprehensive design system and user flows
+                    prioritizing intuitive navigation and user engagement. I developed a fully responsive interface that
+                    adapts seamlessly across mobile, tablet, and desktop devices. The marketplace dynamically populates
+                    game listings through asynchronous API calls, with advanced filtering capabilities allowing users to
+                    sort by platform (PC, PlayStation, Xbox, Nintendo) and genre (Action, RPG, Strategy, etc.).</p>
+
+                <p><strong>Core features I developed include:</strong> Supabase-powered authentication system with
+                    secure session management and password encryption, Node.js/Express middleware server deployed on
+                    Railway for handling IGDB API requests and rate limiting, dynamic game catalog with real-time
+                    search, multi-parameter filtering, and pagination, user-generated review and rating system with CRUD
+                    operations, fully functional shopping cart with session persistence across page reloads, community
+                    marketplace enabling users to create and list custom games, and responsive UI components ensuring
+                    consistent UX across all device sizes. This project exemplifies my capability to architect and
+                    deliver enterprise-level applications, integrate multiple third-party services, implement proper
+                    separation of concerns, and apply modern full-stack development practices to create scalable,
+                    maintainable web solutions.</p>
             </div>
         </div>
     </main>
@@ -150,7 +178,7 @@
     </button>
     <script src="../resources/js/main.js"></script>
     <script src="../resources/js/scroll.js"></script>
-    <script src="../resources/js/transition.js"></script>
+    <script src="../resources/js/page-transition.js"></script>
 </body>
 
 </html>

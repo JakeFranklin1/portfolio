@@ -483,6 +483,11 @@ strong {
     margin-top: 16px; /* Add space between the image and the text */
 }
 
+.project-desc-links {
+    color: #02cc74;
+    font-size: 0.8rem;
+}
+
 .project-image-overlay {
     position: absolute;
     padding-left: 1rem;
