@@ -146,6 +146,7 @@ export default function ProjectPage() {
   const [scrollY, setScrollY] = useState(0);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorVisible, setCursorVisible] = useState(false);
+  const [cursorHovering, setCursorHovering] = useState(false);
 
   // Scroll to top whenever the slug changes
   useEffect(() => {
@@ -154,8 +155,12 @@ export default function ProjectPage() {
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY);
-    const onMove = (e) => { setCursorPos({ x: e.clientX, y: e.clientY }); setCursorVisible(true); };
-    const onLeave = () => setCursorVisible(false);
+    const onMove = (e) => {
+      setCursorPos({ x: e.clientX, y: e.clientY });
+      setCursorVisible(true);
+      setCursorHovering(!!e.target.closest('a, button, [data-clickable]'));
+    };
+    const onLeave = () => { setCursorVisible(false); setCursorHovering(false); };
     window.addEventListener("scroll", onScroll);
     window.addEventListener("mousemove", onMove);
     document.addEventListener("mouseleave", onLeave);
@@ -178,6 +183,7 @@ export default function ProjectPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { background: #080808; color: #fff; font-family: 'DM Mono', monospace; cursor: none; }
+        * { cursor: none !important; }
         ::selection { background: ${accent}; color: #080808; }
         ::-webkit-scrollbar { width: 3px; }
         ::-webkit-scrollbar-track { background: #080808; }
@@ -199,7 +205,11 @@ export default function ProjectPage() {
           position: fixed; width: 36px; height: 36px;
           border: 1px solid ${accentBorder}; border-radius: 50%;
           pointer-events: none; z-index: 9998;
-          transition: left 0.18s ease, top 0.18s ease, opacity 0.3s;
+          transition: transform 0.25s ease, opacity 0.3s, border-color 0.25s;
+        }
+        .cursor-ring.hovering {
+          transform: scale(1.8);
+          border-color: ${accent};
         }
 
         .nav-back {
@@ -325,7 +335,7 @@ export default function ProjectPage() {
 
       {/* Custom cursor */}
       <div className="cursor-dot" style={{ left: cursorPos.x - 5, top: cursorPos.y - 5, opacity: cursorVisible ? 1 : 0 }} />
-      <div className="cursor-ring" style={{ left: cursorPos.x - 18, top: cursorPos.y - 18, opacity: cursorVisible ? 1 : 0 }} />
+      <div className={`cursor-ring${cursorHovering ? " hovering" : ""}`} style={{ left: cursorPos.x - 18, top: cursorPos.y - 18, opacity: cursorVisible ? 1 : 0 }} />
 
       {/* ── NAV ──────────────────────────────────── */}
       <nav className="pp-nav" style={{

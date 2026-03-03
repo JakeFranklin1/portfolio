@@ -99,6 +99,7 @@ function ProjectCard({ project, index }) {
   return (
     <div
       ref={ref}
+      data-clickable="true"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onClick={() => navigate(`/project/${project.slug}`)}
@@ -195,6 +196,7 @@ export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   const [cursorVisible, setCursorVisible] = useState(false);
+  const [cursorHovering, setCursorHovering] = useState(false);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -206,8 +208,9 @@ export default function Portfolio() {
     const onMouseMove = (e) => {
       setCursorPos({ x: e.clientX, y: e.clientY });
       setCursorVisible(true);
+      setCursorHovering(!!e.target.closest('a, button, [data-clickable]'));
     };
-    const onMouseLeave = () => setCursorVisible(false);
+    const onMouseLeave = () => { setCursorVisible(false); setCursorHovering(false); };
     window.addEventListener("scroll", onScroll);
     window.addEventListener("mousemove", onMouseMove);
     document.addEventListener("mouseleave", onMouseLeave);
@@ -236,6 +239,7 @@ export default function Portfolio() {
           font-family: 'DM Mono', monospace;
           cursor: none;
         }
+        * { cursor: none !important; }
 
         ::selection { background: #00FFC0; color: #080808; }
 
@@ -265,7 +269,11 @@ export default function Portfolio() {
           pointer-events: none;
           z-index: 9998;
           mix-blend-mode: difference;
-          transition: transform 0.18s ease, opacity 0.3s;
+          transition: transform 0.25s ease, opacity 0.3s, border-color 0.25s;
+        }
+        .custom-cursor-ring.hovering {
+          transform: scale(1.8);
+          border-color: rgba(0,255,192,0.9);
         }
 
         .grain-overlay {
@@ -444,7 +452,7 @@ export default function Portfolio() {
         }}
       />
       <div
-        className="custom-cursor-ring"
+        className={`custom-cursor-ring${cursorHovering ? " hovering" : ""}`}
         style={{
           left: cursorPos.x - 18,
           top: cursorPos.y - 18,
@@ -549,8 +557,8 @@ export default function Portfolio() {
           minHeight: "100vh",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "flex-end",
-          padding: "0 2rem 4rem",
+          justifyContent: "flex-start",
+          padding: "160px 2rem 4rem",
           position: "relative",
           overflow: "hidden",
         }}
@@ -651,7 +659,7 @@ export default function Portfolio() {
             }}
           >
             Final Year Computer Science & Cybersecurity
-            <span style={{ color: "#00FFC0" }}> /</span> Solent University
+            <span style={{ color: "#00FFC0" }}> /</span> Brighton University
           </p>
           <p
             style={{
