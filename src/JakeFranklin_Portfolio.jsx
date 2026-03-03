@@ -36,7 +36,7 @@ const PROJECTS = [
     name: "GameStore",
     type: "Full-Stack Web App",
     tags: ["Node.js", "Express", "PostgreSQL", "Supabase", "IGDB API"],
-    context: "University",
+    context: "University / Live",
     description:
       "A full-stack game marketplace with dynamic catalog population via IGDB API, user auth, platform/genre filtering, community reviews, and custom listings.",
     accent: "#FF3D57",
