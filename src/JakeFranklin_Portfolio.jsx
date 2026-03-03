@@ -438,6 +438,7 @@ export default function Portfolio() {
           .contact-section { padding: 4rem 1.5rem 3rem !important; }
           .hero-section { min-height: unset !important; padding: 120px 1.5rem 4rem !important; }
           .hire-bg-text { display: none !important; }
+          .status-line { display: none !important; }
         }
       `}</style>
 
@@ -603,21 +604,20 @@ export default function Portfolio() {
 
         {/* Status line */}
         <div
-          className="fade-up-1"
+          className="fade-up-1 status-line"
           style={{
-            fontFamily: "'DM Mono', monospace",
-            fontSize: "0.7rem",
             letterSpacing: "0.2em",
             textTransform: "uppercase",
             color: "rgba(255,255,255,0.35)",
             marginBottom: "1.5rem",
             display: "flex",
             alignItems: "center",
+            flexWrap: "wrap",
             gap: "0.75rem",
           }}
         >
           <span style={{ color: "#00FFC0" }}>●</span>
-          Available for Graduate & Junior Roles
+          <span>Available for Graduate &amp; Junior Roles</span>
           <span style={{ color: "rgba(255,255,255,0.15)" }}>— UK Based</span>
         </div>
 
