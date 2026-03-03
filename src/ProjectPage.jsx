@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
+import habitQuestImg from "../resources/images/mockups/mockuuups-iphone-16-mockup-laying-on-concrete-blocks.jpeg";
+import gamestoreImg from "../resources/images/mockups/mockuuups-free-macbook-pro-mockup-on-stone-pedestal.jpeg";
+import carverCrossImg from "../resources/images/mockups/mockuuups-free-macbook-air-15-mockup-on-dark-textured-rocks.jpeg";
 
 // ─── PROJECT DATA ────────────────────────────────────────────────────────────
 
@@ -15,7 +18,7 @@ const PROJECTS = {
     accentDim: "rgba(0,255,192,0.08)",
     accentBorder: "rgba(0,255,192,0.2)",
     tagline: "Turn your daily routines into an RPG.",
-    mockupSrc: "https://jakefranklin.dev/resources/images/mockups/mockuuups-iphone-16-mockup-laying-on-concrete-blocks.jpeg",
+    mockupSrc: habitQuestImg,
     problem: "Most habit tracking apps are sterile spreadsheets dressed up with a coat of paint. They do nothing to make the process of building habits feel meaningful or rewarding — so users quit.",
     solution: "Habit Quest wraps every action in RPG mechanics. Complete habits to earn XP, level up your character, and maintain streaks. Break a streak and your character loses health. The result is genuine emotional investment in daily routines.",
     features: [
@@ -46,7 +49,7 @@ const PROJECTS = {
     accentDim: "rgba(255,61,87,0.08)",
     accentBorder: "rgba(255,61,87,0.2)",
     tagline: "A community-driven game marketplace powered by IGDB.",
-    mockupSrc: "https://jakefranklin.dev/resources/images/mockups/mockuuups-free-macbook-pro-mockup-on-stone-pedestal.jpeg",
+    mockupSrc: gamestoreImg,
     problem: "Game discovery platforms are either corporate giants (Steam) or chaotic community boards. There's no middle ground: a clean, full-stack marketplace where users can browse, review, and list games with a consistent, modern UI.",
     solution: "GameStore pulls live game data from the IGDB API and layers community features on top — user auth, reviews, custom listings, and advanced filters by platform and genre. Built end-to-end with Node/Express and PostgreSQL on Supabase.",
     features: [
@@ -60,7 +63,7 @@ const PROJECTS = {
     tags: ["Node.js", "Express", "PostgreSQL", "Supabase", "IGDB API", "REST API", "Figma"],
     links: {
       source: "https://github.com/JakeFranklin1",
-      demo: null,
+      demo: "https://ci536-gamestore.netlify.app/",
     },
     prevSlug: "habit-quest",
     prevName: "Habit Quest",
@@ -78,7 +81,7 @@ const PROJECTS = {
     accentDim: "rgba(77,142,255,0.08)",
     accentBorder: "rgba(77,142,255,0.2)",
     tagline: "A recruitment agency that operates where precision matters.",
-    mockupSrc: "https://jakefranklin.dev/resources/images/mockups/mockuuups-free-macbook-air-15-mockup-on-dark-textured-rocks.jpeg",
+    mockupSrc: carverCrossImg,
     problem: "The client — a recruitment agency in satellite, space & defence, and automotive sectors — had no web presence. Their industry demands credibility. A generic template wouldn't cut it.",
     solution: "A bespoke landing page designed end-to-end in Figma: corporate authority, clean whitespace, and deliberate typography that signals precision. SEO-optimised from day one so the site actually gets found.",
     features: [
@@ -309,9 +312,11 @@ export default function ProjectPage() {
           .pp-next { padding: 4rem 1.5rem !important; }
           .scroll-cue-pp { display: none !important; }
           .pp-nav { padding: 0 1.5rem !important; }
-          .pp-hero h1 { font-size: clamp(1.5rem, 8vw, 10rem) !important; }
+          .pp-hero h1 { font-size: clamp(1.8rem, 7.5vw, 10rem) !important; line-height: 0.92 !important; }
           .pp-hero-num { display: none !important; }
-          .np-label { font-size: clamp(1.8rem, 10vw, 8rem) !important; }
+          .np-label { font-size: clamp(1.8rem, 7.5vw, 8rem) !important; white-space: normal !important; word-break: break-word !important; }
+          .pp-next-ghost { display: none !important; }
+          .pp-next { overflow: visible !important; }
         }
 
         /* Project nav tabs */
@@ -422,14 +427,22 @@ export default function ProjectPage() {
           {/* Title */}
           <h1 className="fu-2" style={{
             fontFamily: "'Syne', sans-serif", fontWeight: 900,
-            fontSize: "clamp(3.5rem, 10vw, 10rem)",
+            fontSize: "clamp(2.8rem, 10vw, 10rem)",
             letterSpacing: "-0.04em", lineHeight: 0.88,
             marginBottom: "2.5rem",
           }}>
-            {project.name.includes(" ") ? (
+            {project.name.split(" ").length >= 3 ? (
               <>
                 {project.name.split(" ").slice(0, -1).join(" ")}
                 <br />
+                <span style={{ color: "rgba(255,255,255,0.18)", WebkitTextStroke: `1px rgba(255,255,255,0.45)` }}>
+                  {project.name.split(" ").slice(-1)[0]}
+                </span>
+                <span style={{ color: accent }}>.</span>
+              </>
+            ) : project.name.includes(" ") ? (
+              <>
+                {project.name.split(" ").slice(0, -1).join(" ")}{" "}
                 <span style={{ color: "rgba(255,255,255,0.18)", WebkitTextStroke: `1px rgba(255,255,255,0.45)` }}>
                   {project.name.split(" ").slice(-1)[0]}
                 </span>
@@ -611,7 +624,7 @@ export default function ProjectPage() {
       {project.nextSlug && (
         <section className="pp-next" style={{ padding: "7rem 2.5rem", position: "relative", overflow: "hidden" }}>
           {/* Ghost text */}
-          <div style={{
+          <div className="pp-next-ghost" style={{
             position: "absolute", right: "-1rem", bottom: "-2rem",
             fontFamily: "'Syne', sans-serif", fontWeight: 900,
             fontSize: "clamp(6rem, 18vw, 18rem)",

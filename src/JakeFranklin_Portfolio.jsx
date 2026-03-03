@@ -389,12 +389,13 @@ export default function Portfolio() {
         .mobile-nav a {
           font-family: 'Syne', sans-serif;
           font-weight: 900;
-          font-size: clamp(2.8rem, 14vw, 5.5rem);
+          font-size: clamp(2rem, 11vw, 5.5rem);
           letter-spacing: -0.03em;
           text-transform: uppercase;
           color: rgba(255,255,255,0.2);
           text-decoration: none;
           padding: 0.1rem 0;
+          text-align: center;
           opacity: 0;
           transform: translateY(28px);
           transition: color 0.25s ease, opacity 0.45s ease, transform 0.45s ease;
@@ -436,6 +437,7 @@ export default function Portfolio() {
           .about-section { padding: 4rem 1.5rem !important; }
           .contact-section { padding: 4rem 1.5rem 3rem !important; }
           .hero-section { min-height: unset !important; padding: 120px 1.5rem 4rem !important; }
+          .hire-bg-text { display: none !important; }
         }
       `}</style>
 
@@ -955,16 +957,6 @@ export default function Portfolio() {
               >
                 I'm a final-year CS & Cybersecurity student with a bias for products that feel as considered as they perform. I build across Android, web, and full-stack — and I care deeply about the gap between functional and polished.
               </p>
-              <p
-                style={{
-                  fontFamily: "'DM Mono', monospace",
-                  fontSize: "0.85rem",
-                  lineHeight: 1.8,
-                  color: "rgba(255,255,255,0.3)",
-                }}
-              >
-                Outside of coursework, I build side projects — including a dark minimal platform for a DnB music artist — because I believe the best developers are also designers.
-              </p>
             </div>
 
             {/* Right — stat grid */}
@@ -1038,6 +1030,7 @@ export default function Portfolio() {
       >
         {/* Large background text */}
         <div
+          className="hire-bg-text"
           style={{
             position: "absolute",
             bottom: "-2rem", left: "-1rem",
