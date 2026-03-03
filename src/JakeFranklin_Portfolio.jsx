@@ -803,7 +803,7 @@ export default function Portfolio() {
                   color: "#fff",
                 }}
               >
-                Projects
+                PROJECTS
               </h2>
             </div>
             <span
@@ -862,7 +862,7 @@ export default function Portfolio() {
                 marginBottom: "4rem",
               }}
             >
-              Skills
+              SKILLS
             </h2>
           </AnimatedSection>
 
