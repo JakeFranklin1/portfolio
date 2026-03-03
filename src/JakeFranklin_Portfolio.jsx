@@ -320,7 +320,7 @@ export default function Portfolio() {
         }
         .skill-pill:hover {
           border-color: #00FFC0;
-          background: rgba(200,255,0,0.04);
+          background: rgba(0,255,192,0.06);
           transform: translateY(-2px);
         }
         .skill-pill:hover .skill-name { color: #00FFC0; }

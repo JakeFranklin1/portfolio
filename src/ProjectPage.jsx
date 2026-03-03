@@ -380,8 +380,8 @@ export default function ProjectPage() {
       {/* ── HERO ─────────────────────────────────── */}
       <section className="pp-hero" style={{
         minHeight: "100vh", position: "relative", overflow: "hidden",
-        display: "flex", flexDirection: "column", justifyContent: "flex-end",
-        padding: "0 2.5rem 5rem",
+        display: "flex", flexDirection: "column", justifyContent: "flex-start",
+        padding: "140px 2.5rem 5rem",
       }}>
 
         {/* Background: huge project number */}
